@@ -31,7 +31,7 @@ div:target
 	color:yellow;
 }
 body{counter-reset:chapter;}
-p:before{content:"µÚ"counter(chapter)"ÕÂ";}
+p:before{content:"ç¬¬"counter(chapter)"ç« ";}
 p{counter-increment:chapter;}
 div[id="d1"]{transition:background,width 1s,1s linear 0s,0s;}
 div[id="d1"]:hover{background:orange;width:200px;}
@@ -41,7 +41,7 @@ div[id="d1"]{width:10px;height:100px;border:1px solid black;}
 </style>
 <script type="text/javascript">
 window.onload=function(){
-    //°ó¶¨»Ø³µÊÂ¼ş
+    //ç»‘å®šå›è½¦äº‹ä»¶
     document.onkeydown=function(e){if(e.keyCode==13)alert(233);}
     //this
     var john={name:"John"};
@@ -67,20 +67,20 @@ window.onload=function(){
 	funs();
     //"-&quot; '-&#39;
     //$('body').get(0).innerHTML='<h1 onclick="console.info(&#39;233&#39;);">Click me!</h5>';
-	//ÈıÔªÔËËã·û
-	//console.info('ÈıÔªÔËËã·û:',1===1&&true||false);
-    //×Ô¶¨Òåº¯Êı
+	//ä¸‰å…ƒè¿ç®—ç¬¦
+	//console.info('ä¸‰å…ƒè¿ç®—ç¬¦:',1===1&&true||false);
+    //è‡ªå®šä¹‰å‡½æ•°
 	var ns=' a d ';
 	String.prototype.xudong=function(){return this.replace(/^s+|s+$/g,"#");};
-	//console.info("×Ô¶¨Òåº¯Êı:",ns.xudong());
-    //²é¿´¶ÔÏñËùÓĞÊôĞÔ
+	//console.info("è‡ªå®šä¹‰å‡½æ•°:",ns.xudong());
+    //æŸ¥çœ‹å¯¹åƒæ‰€æœ‰å±æ€§
 	for(var i in event){
         //console.log(i,event[i]);
 	}
-    //×Ô¶¨Òåº¯Êı-Êı×éÇóºÍ
+    //è‡ªå®šä¹‰å‡½æ•°-æ•°ç»„æ±‚å’Œ
     Array.prototype.sum=function(){var result=0;for(var i=0;i<this.length;i++){result+=this[i];}return result;}
     //console.info('sum1:',[1,3,2].sum());
-    Array.prototype.sum2=function(){
+    Array.prototype.sum2=function(){ 
         return this.reduce(function(partial,value){return partial+value;});
     }
     //console.info('sum2:',[1,3,2].sum2());
@@ -148,8 +148,8 @@ jeDate.skin("gray");
 jeDate({
     dateCell:"#endT",
     format:"YYYY-MM-DD hh:mm:ss",
-    minDate: jeDate.now(0), //Éè¶¨×îĞ¡ÈÕÆÚÎªµ±Ç°ÈÕÆÚ
-	maxDate: '2017-01-01 00:00:00', //×î´óÈÕÆÚ
+    minDate: jeDate.now(0), //è®¾å®šæœ€å°æ—¥æœŸä¸ºå½“å‰æ—¥æœŸ
+	maxDate: '2017-01-01 00:00:00', //æœ€å¤§æ—¥æœŸ
     isTime:true, 
     choosefun:function(val) {
     	return startT=val;
@@ -185,27 +185,27 @@ $("input").keyup(function(){
 $("input[class='i_c']").change(function(){
 	$(this).next("span").text($(this).val());
 });
-//canvas »­¾ØĞÎ
+//canvas ç”»çŸ©å½¢
 var ca=document.getElementById("canvas_1").getContext('2d');
 ca.strokeRect(10,10,80,80);
 ca.fillRect(20,20,60,60);
 ca.clearRect(30,30,40,40);
-//canvas Ğ¡Çò
+//canvas å°çƒ
 var canvas=document.getElementById("canvas_2");
 var context2D=canvas.getContext('2d');
-//Ğ¡Çò´Ó(0,0)¿ªÊ¼ÒÆ¶¯£¬ºáÏò²½³¤Îª2£¬×İÏò²½³¤Îª3
+//å°çƒä»(0,0)å¼€å§‹ç§»åŠ¨ï¼Œæ¨ªå‘æ­¥é•¿ä¸º2ï¼Œçºµå‘æ­¥é•¿ä¸º3
 var x=0,y=0,dx=2,dy=3;
 setInterval(draw,10);
 function draw(){
 	context2D.fillStyle="red";
 	context2D.clearRect(0,0,canvas.width,canvas.height);
-	//ÅĞ¶Ï±ß½ç
+	//åˆ¤æ–­è¾¹ç•Œ
 	if(x+dx>canvas.width || x+dx<0)dx*=-1;
 	if(y+dy>canvas.height || y+dy<0)dy*=-1;
 	x+=dx;y+=dy;drawArc(x,y);
 }
 function drawArc(x,y){
-	//×Ô¶¨Òå»­Ô²·½·¨
+	//è‡ªå®šä¹‰ç”»åœ†æ–¹æ³•
 	context2D.fillStyle="red";
 	context2D.beginPath();
 	context2D.arc(x,y,5,0,Math.PI*2,false);
@@ -229,20 +229,20 @@ Object.prototype.get_same_class_html=function(){
 });
 </script>
 <body align=center style="border:1px solid black;">
-	<span class="teacherName">ÎÒÊÇÀÏÊ¦1</span>
-	<span class="teacherName">ÎÒÊÇÀÏÊ¦2</span>
-	<span class="courseStage">ÎÒÊÇ½×¶Î1</span>
-	<span class="courseStage">ÎÒÊÇ½×¶Î2</span>
+	<span class="teacherName">æˆ‘æ˜¯è€å¸ˆ1</span>
+	<span class="teacherName">æˆ‘æ˜¯è€å¸ˆ2</span>
+	<span class="courseStage">æˆ‘æ˜¯é˜¶æ®µ1</span>
+	<span class="courseStage">æˆ‘æ˜¯é˜¶æ®µ2</span>
 	<p>1</p>
 	<p class="s1">2</p>
 	<p>3</p>
 	<p>4</p>
-	<input id="d1" type="button" value="ÎÒÊÇ°´Å¥" />
+	<input id="d1" type="button" value="æˆ‘æ˜¯æŒ‰é’®" />
 	<div id="d1" onmousemove="getPointer(event);">5</div>
-	<p id='msg'>À´×Ô<a>ĞÂ»ªÉç</a>µÄÏûÏ¢</p>
+	<p id='msg'>æ¥è‡ª<a>æ–°åç¤¾</a>çš„æ¶ˆæ¯</p>
 	<div style="border:1px solid orange;height:50px;width:100px;" onclick="func(event)">
-		<button style="background-color:red;height:20px;width:50px;">°´Å¥1</button>
-		<button style="background-color:red;height:20px;width:50px;">°´Å¥2</button>
+		<button style="background-color:red;height:20px;width:50px;">æŒ‰é’®1</button>
+		<button style="background-color:red;height:20px;width:50px;">æŒ‰é’®2</button>
 	</div>
 	<input type="text" id="startT" size=10 placeholder="begin" />To
 	<input type="text" id="endT" size=10 placeholder="end" />
@@ -254,8 +254,8 @@ Object.prototype.get_same_class_html=function(){
 	<input class="i_c" type="date" /><span></span><br/><br/>
 	<form> 
 		<input type="text" id="uname" required pattern="[0-9]" />
-		<span id="unameShow">Ó¢ÎÄ¡¢Êı×Ö¼°ÏÂ»®Ïß,6-12Î»</span>
-		<input type="submit" value="Ìá½»" />
+		<span id="unameShow">è‹±æ–‡ã€æ•°å­—åŠä¸‹åˆ’çº¿,6-12ä½</span>
+		<input type="submit" value="æäº¤" />
 	</form><br/>
 	<canvas id="canvas_1" width="100" height="100" style="border:1px solid orange;"></canvas><br/>
 	<canvas id="canvas_2" width="100" height="100" style="border:1px solid orange;"></canvas><br/>
