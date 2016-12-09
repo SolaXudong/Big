@@ -19,579 +19,96 @@
     </section>
 
     <section class="main-content">
-      <p>
-</p>
-    
+      <p></p>
 
 
 
-/*基本效果*/
-body{
-    background-color:skyblue;
-    margin:0 0 0 25%;
-    padding:0;
-}
-#first_page{
-    position:absolute;
-    top:5%;
-    width:40%;
-    height:90%;
-    border:1px solid white;
-    border-radius:10px;
-    z-index:10;
-}
-label{
-    display:none;
-}
-/*动画效果*/
-#leafContainer 
+
+
+
+
+
+
+
+p
 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow:hidden;
+    border:1px solid black;
 }
-#leafContainer &gt; div 
+p.s1+p
 {
-    position: absolute;
-    width:40%;
-    height:90%;
-    -webkit-animation-iteration-count: infinite, infinite;
-    -webkit-animation-direction: normal, normal;
-    -webkit-animation-timing-function: linear, ease-in;
+    color:red;
 }
-#leafContainer &gt; div &gt; img {
-     position: absolute;
-     width: 100px;
-     height: 100px;
-     -webkit-animation-iteration-count: infinite;
-     -webkit-animation-direction: alternate;
-     -webkit-animation-timing-function: ease-in-out;
-     -webkit-transform-origin: 100% -100%;
-}
-@-webkit-keyframes fade
+p.s1~p
 {
-    0%   { opacity: 1; }
-    95%  { opacity: 1; }
-    100% { opacity: 0; }
+    background-color:orange;
 }
-@-webkit-keyframes drop
+:target
 {
-    0%   { -webkit-transform: translate(0px, -50px); }
-    100% { -webkit-transform: translate(0px, 650px); }
+    color:red;
 }
-@-webkit-keyframes clockwiseSpin
+div:target
 {
-    0%   { -webkit-transform: rotate(-50deg); }
-    100% { -webkit-transform: rotate(50deg); }
+    background-color:gray;
 }
-@-webkit-keyframes counterclockwiseSpinAndFlip 
+::selection
 {
-    0%   { -webkit-transform: scale(-1, 1) rotate(50deg); }
-    100% { -webkit-transform: scale(-1, 1) rotate(-50deg); }
+    color:yellow;
 }
+body{counter-reset:chapter;}
+p:before{content:"第"counter(chapter)"章";}
+p{counter-increment:chapter;}
+div[id="d1"]{transition:background,width 1s,1s linear 0s,0s;}
+div[id="d1"]:hover{background:orange;width:200px;}
+div[id="d1"]{width:10px;height:100px;border:1px solid black;}
+#img{border:1px solid red;width:100px;height:100px;}
+#img img{width:100%;height:100%;}
 
 
 
 
 <p></p>
-    A drawing of something.
-    <div id="first_page">
-        我的达内两年工作总结
+    我是老师1
+    我是老师2
+    我是阶段1
+    我是阶段2
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    
+    <div id="d1">5</div>
+    <p id="msg">来自新华社的消息</p>
+    <div>
+        按钮1
+        按钮2
+    </div>
+    To
+    
+    <div id="img"></div><br>
+    
+    <br>
+    <br>
+    <br>
+    <br><br>
+     
         
-            前言
-            
-                
-
-<pre>
-  阅读时先看“关键字”，找到感兴趣的，再返回目录查看(暂时只支持返回一次)。
-  提示：可Ctrl+F用浏览器的查找快速定位。
-  关键字是阅读笔记的总结。
-  唯一的非阅读笔记是BIG里面的HBase集群搭建。
-  全部内容，纯属手敲，如若使用，自行佐证。
-                                                    --author by 徐东
-</pre>
-
-<pre><code>            &lt;/label&gt;
-        &lt;/label&gt;
-        &lt;label&gt;JAVA&lt;/label&gt;
-        &lt;label&gt;
-        &lt;/label&gt;
-        &lt;label&gt;BIG&lt;/label&gt;
-        &lt;label&gt;
-            &lt;label&gt;《NoSQL数据库》&lt;/label&gt;
-            &lt;label&gt;
-                &lt;label&gt;关键字&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-                &lt;label&gt;阅读笔记&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-            &lt;/label&gt;
-            &lt;label&gt;《Redis入门指南》&lt;/label&gt;
-            &lt;label&gt;
-                &lt;label&gt;关键字&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-                &lt;label&gt;阅读笔记&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-            &lt;/label&gt;
-            &lt;label&gt;《Redis实战》&lt;/label&gt;
-            &lt;label&gt;
-                &lt;label&gt;关键字&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-                &lt;label&gt;阅读笔记&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-            &lt;/label&gt;
-            &lt;label&gt;《HBase实战》&lt;/label&gt;
-            &lt;label&gt;
-                &lt;label&gt;关键字&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-                &lt;label&gt;阅读笔记&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-            &lt;/label&gt;
-            &lt;label&gt;《大数据面试宝典》&lt;/label&gt;
-            &lt;label&gt;
-                &lt;label&gt;关键字&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-                &lt;label&gt;阅读笔记&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-            &lt;/label&gt;
-            &lt;label&gt;HADOOP+ZOOKEEPER+HBASE完全分布式集群搭建&lt;/label&gt;
-            &lt;label&gt;
-                &lt;label&gt;搭建步骤及配置文件&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
-
-<pre>
-【注意】
-    1.HBase简述：HBase在表里存储数据使用的是四维坐标系统(行键-rowkey、列族-column family、列限定符column qualifier、时间版本version)
-    2.若是虚拟机环境，虚拟机安装，各机器网络配置自行百度
-    3.我用的超极本，内存有限，只搭了三台(三台是最低配，挂一台集群就挂了)，如果内存够大的话，最好搭7台，一主6从
-    4.报错首先看对应的目录下log日志文件，用关键字上网查方法
-    5.所有命令都在hadoop00上操作，另两台机器直接复制过去即可，Zookeeper的myid文件注意别忘修改
-    6.目前测试环境用的这个集群，Java API比较简单，别引错Jar包，要对应版本
-        #配置文件若写的域名，别忘改hosts
-        #Java API调用10s没反应就是连不上了(不会报错，引错Jar包也没反应)
-【一、安装前准备及环境】
-1.所用tar包及版本：
-    hadoop-2.2.0.tar.gz
-    zookeeper-3.4.6.tar.gz
-    hbase-0.98.23-hadoop2-bin.tar.gz
-Hadoop2.x版本对应的HBase版本是0.98，zookeeper版本没要求，JAVA API引jar包时注意版本，否则连接不上
-Hadoop1.x版本的搭建就不写了，对应的HBase版本是0.94，zookeeper版本没要求
-Linux环境需求：
-    JDK，自行百度
-    DNS域名解析hosts文件
-2.本人环境目录：
-    JDK
-        文件目录：/etc/profile
-        内容：
-            export JAVA_HOME=/home/work/jdk
-            export PATH=$PATH:$JAVA_HOME/bin:
-            export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib
-    hosts
-        文件目录：/etc/hosts
-        内容：
-            192.168.10.10 hadoop00
-            192.168.10.11 hadoop01
-            192.168.10.12 hadoop02
-    软件安装路径：
-        /home/work
-【二、安装及配置】
-1.解压tar包，改文件名，注意权限(我用的root，最好创建一个用户，给文件夹添加这个用户的权限)
-    &gt;cd /home/work
-    &gt;tar -zxvf hadoop-2.2.0.tar.gz
-    &gt;mv hadoop-2.2.0.tar.gz hadoop
-    &gt;tar -zxvf zookeeper-3.4.6.tar.gz
-    &gt;mv zookeeper-3.4.6.tar.gz zookeeper
-    &gt;tar -zxvf hbase-0.98.23-hadoop2-bin.tar.gz
-    &gt;mv hbase-0.98.23-hadoop2-bin.tar.gz hbase
-2.配置文件
-    篇幅较大，放在最后
-3文件夹准备(没有就创建，在配置文件中指定的，可修改)
-    Hadoop：
-        /home/work/data/hadoop/dfs/data
-        /home/work/data/hadoop/dfs/name
-        /home/work/data/hadoop/pids
-        /home/work/data/hadoop/tmp
-    Zookeeper：
-        /home/work/data/zookeeper/data
-            注意：在此data文件夹里创建myid文件，写机器ID。如：hadoop00这台机器写1，hadoop01这台机器写2，hadoop02这台机器写3(在Zookeeper配置文件中指定，可修改)
-        /home/work/data/zookeeper/datalog
-    HBase：
-        /home/work/data/
-4.启动前检查
-    &gt;df -h
-        #检查磁盘空间占用情况
-    &gt;date
-        #查看三台服务器时间是否一致
-    #不一致的话，用下面命令改成一致，如果报错，自行百度
-    &gt;rdate -s 210.72.145.44
-        #网络时间同步命令 中国国家授时中心 NTP服务器
-5.多台机器之间免密钥登录
-    &gt;cd .ssh
-    &gt;ssh-keygen -t rsa
-        #一路回车即可
-    &gt;cat id_rsa.pub &gt;&gt; authorized_keys
-    &gt;scp authorized_keys  root@hadoop01:/root/.ssh/
-    &gt;scp authorized_keys  root@hadoop02:/root/.ssh/
-    &gt;ssh root@hadoop01
-        #登录成功，配置成功。如果还提示输入密码，配置失败
-6.注意
-    启动顺序：Hadoop-&gt;Zookeeper-&gt;HBase
-    关闭顺序：HBase-&gt;Zookeeper-&gt;Hadoop
-【三、启动集群】
-1.Hadoop格式化文件系统
-    &gt;/home/work/hadoop/bin/hadoop namenode -format
-    注意：如果以安全模式启动运行时会报错，不是可忽略
-        离开安全模式
-        &gt;/home/work/hadoop/bin/hadoop dfsadmin -safemode leave
-2.启Hadoop
-    &gt;/home/work/hadoop/sbin/start-all.sh
-    #稍等一会儿，输入jps查看进程
-        #hadoop00机器
-            &gt;jps
-            #NameNode、SecondaryNameNode、RedourceManager
-        #hadoop01机器
-            &gt;jps
-            #DataNode、NodeManager
-        #hadoop02机器
-            &gt;jps
-            #DataNode、NodeManager
-    #看到这五个进程，Hadoop启动成功
-3.启Zookeeper
-    &gt;/home/work/zookeeper/bin/zkServer.sh start
-    &gt;jps
-        #QuorumPeerMain
-        #看到此进程，Zookeeper启动成功
-    &gt;/home/work/zookeeper/bin/zkServer.sh status
-        #查看当前机器是leader还是follower(只有一个leader，主挂了，一个从会升为主，三台是最低配)
-4.启HBase
-    &gt;/home/work/hbase/bin/start-hbase.sh
-        #可查看日志，看有无报错，日志目录默认：/home/work/hbase/log/
-5.连接HBase
-    &gt;/home/work/hbase/bin/hbase shell
-    #注意：命令敲错不能删除，可在连接软件中配置，我用的SecureCRT，选项-终端-仿真-映射键，把勾勾掉，记不清了，自行百度吧
-    &gt;list
-        #查看数据库
-    &gt;status
-        #查看机器状态
-    &gt;help
-        #查看帮助
-    &gt;create 'tab1','cf1'
-        #创建一个表，有一个列族
-    &gt;put 'tab1','rk1','cf1:name','zhang'
-        #存入tab1表，rk1行键，cf1列族，name列的值
-    &gt;get 'tab1','rk1'
-        #查看某一行键
-    &gt;scan 'tab1'
-        #扫描全表
-    &gt;disable 'tab1'
-        #屏蔽表(或叫禁用表)
-    &gt;drop 'tab1'
-        #删除表(必须先屏蔽表再行)
-【四、关闭集群】
-1.关HBase
-    &gt;/home/work/hbase/bin/stop-hbase.sh
-2.关Zookeeper
-    &gt;/home/work/zookeeper/bin/zkServer.sh stop
-3.关Hadoop
-    &gt;/home/work/hadoop/sbin/stop-all.sh
-【补允：配置文件】
-1.hadoop-6个
-    我的hadoop配置文件在 /home/work/hadoop/etc/hadoop/ 里面
-    (1/6)core-site.xml
+        英文、数字及下划线,6-12位
         
-            
-                fs.defaultFS
-                hdfs://hadoop00:9000
-                The name of the default file system.Either the literal string "local" or a host:port for NDFS.
-                true
-            
-            
-                io.file.buffer.size
-                131072
-            
-            
-                hadoop.tmp.dir
-                file:/home/work/data/hadoop/tmp
-                Abase for other temporary directories.
-            
+    <br>
+    <br>
+    <br>
+    
+    
         
-    (2/6)hdfs-site.xml
         
-            
-                dfs.namenode.secondary.http-address
-                hadoop00:9001
-            
-            
-                dfs.namenode.name.dir
-                file:/home/work/data/hadoop/dfs/name
-                Determines where on the local filesystem the DFS name node should store the name table.If this is a comma-delimited list of directories,then name table is replicated in all of the directories,for redundancy.
-                true
-            
-            
-                dfs.datanode.data.dir
-                file:/home/work/data/hadoop/dfs/data
-                Determines where on the local filesystem an DFS data node should store its blocks.If this is a comma-delimited list of directories,then data will be stored in all named directories,typically on different devices.Directories that do not exist are ignored.
-                
-                true
-            
-            
-                dfs.replication
-                1
-            
-            
-                dfs.webhdfs.enabled
-                true
-            
         
-    (3/6)mapred-site.xml
         
-            
-                mapreduce.framework.name
-                yarn
-            
-            
-                mapreduce.jobhistory.address
-                hadoop00:10020
-            
-            
-                mapreduce.jobhistory.webapp.address
-                hadoop00:19888
-            
         
-    (4/6)yarn-site.xml
         
-            
-                yarn.nodemanager.aux-services
-                mapreduce_shuffle
-            
-            
-                yarn.nodemanager.aux-services.mapreduce.shuffle.class
-                org.apache.hadoop.mapred.ShuffleHandler
-            
-            
-                yarn.resourcemanager.address
-                hadoop00:8032
-            
-            
-                yarn.resourcemanager.scheduler.address
-                hadoop00:8030
-            
-            
-                yarn.resourcemanager.resource-tracker.address
-                hadoop00:8031
-            
-            
-                yarn.resourcemanager.admin.address
-                hadoop00:8033
-            
-            
-                yarn.resourcemanager.webapp.address
-                hadoop00:8088
-            
-        
-    (5/6)yarn-env.sh
-        export HADOOP_FREFIX=/home/work/hadoop
-        export HADOOP_COMMON_HOME=${HADOOP_FREFIX}
-        export HADOOP_HDFS_HOME=${HADOOP_FREFIX}
-        export PATH=$PATH:$HADOOP_FREFIX/bin
-        export PATH=$PATH:$HADOOP_FREFIX/sbin
-        export HADOOP_MAPRED_HOME=${HADOOP_FREFIX}
-        export YARN_HOME=${HADOOP_FREFIX}
-        export HADOOP_CONF_HOME=${HADOOP_FREFIX}/etc/hadoop
-        export YARN_CONF_DIR=${HADOOP_FREFIX}/etc/hadoop
-        export JAVA_HOME=/home/work/jdk
-        export HADOOP_PID_DIR=/home/work/data/hadoop/pids
-    (6/6)hadoop-env.sh
-        #内容跟yarn-env.sh一模一样，复制即可
-2.zookeeper-1个
-    配置文件在 /home/work/zookeeper/conf/ 里面
-    zoo.cfg
-        tickTime=2000
-        dataDir=/home/work/data/zookeeper/data
-        dataLogDir=/home/work/data/zookeeper/datalog
-        clientPort=2181
-        initLimit=5
-        syncLimit=2
-        server.1=192.168.10.10:2888:3888
-        server.2=192.168.10.11:2888:3888
-        server.3=192.168.10.12:2888:3888
-3.hbase-2个
-    配置文件在 /home/work/hbase/conf/ 里面
-    (1/2)hbase-env.sh
-        export JAVA_HOME=/home/work/jdk
-        export HBASE_PID_DIR=/home/work/data
-        export HBASE_MANAGES_ZK=false
-    (2/2)hbase-site.xml
-        
-            
-                hbase.rootdir
-                hdfs://hadoop00:9000/hbase
-            
-            
-                hbase.cluster.distributed
-                true
-            
-            
-                hbase.master
-                hdfs://hadoop00:60000
-            
-            
-                hbase.zookeeper.quorum
-                hadoop00,hadoop01,hadoop02
-            
-            
-                hbase.tmp.dir
-                /home/work/data/hbase/data
-            
-        
-</pre>
-                        
-                    
-                
-                ...
-                
-                    关键字
-                    
-                        
-<pre>
-</pre>
+    <br>
+    <br>
 
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-                &lt;label&gt;阅读笔记&lt;/label&gt;
-                &lt;label&gt;
-                    &lt;label&gt;
-</code></pre>
 
-<pre>
-</pre>
-
-<pre><code>                    &lt;/label&gt;
-                &lt;/label&gt;
-            &lt;/label&gt;
-        &lt;/label&gt;
-        &lt;label&gt;LINUX&lt;/label&gt;
-        &lt;label&gt;
-        &lt;/label&gt;
-        &lt;label&gt;WEB&lt;/label&gt;
-        &lt;label&gt;
-        &lt;/label&gt;
-        &lt;label&gt;架构&lt;/label&gt;
-        &lt;label&gt;
-        &lt;/label&gt;
-        &lt;label&gt;结束语&lt;/label&gt;
-        &lt;label&gt;
-            &lt;label&gt;
-</code></pre>
-
-<pre>   
-  以上就是个人两个爱好之一电脑其中的编程这两年学到的几乎全部东西，谁确的说是2016年5月到咋天这半年多，因为大部分内容都是在此期间所学。
-  至于离职原因，也曾认真想过，这里有优秀的人和良好的环境，不过可能是自己比较固执吧，不管对错，已定下的决定就要执行，至于想法的根源的话，可能是这座城市没有自己想要找的东西吧。新的城市，会认识新的人，也许自己还是什么都无法改变，但至少向外踏了一步。
-  突然想到了薪资，薪资和能力成正比，不管别人怎么样，我是这样要求自己的，自己什么水平自己心里清楚。高薪是努力过的证明，努力不是为了高薪，高薪只是一个证明。
-  因为眼睛近视度数有些深，即便戴眼镜走路也没有看人的习惯，没能好好跟大家打招呼，对不起，因经验不足，一直以来也给大家添了不少麻烦，对不起，最后，也谢谢大家一直以来的关照。
-  总感觉，从一开始什么都不会的自己能来到达内真是太好了。
-</pre>
-
-<pre><code>            &lt;/label&gt;
-        &lt;/label&gt;
-    &lt;/label&gt;
-    &lt;label id="to_back_page"&gt;返回&lt;/label&gt;
-    &lt;label&gt;
-        &lt;label&gt;&lt;/label&gt;
-    &lt;/label&gt;
-    &lt;label id="to_first_page"&gt;首页&lt;/label&gt;
-    &lt;label&gt;
-        &lt;label&gt;&lt;/label&gt;
-    &lt;/label&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>
-</p>
-
-</div>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/SolaXudong/Big">Big</a> is maintained by <a href="https://github.com/SolaXudong">SolaXudong</a>.</span>
