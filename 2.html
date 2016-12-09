@@ -1,0 +1,273 @@
+<html>
+<!--
+<meta charset="utf-8">
+-->
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script language="javascript" src="jedate/jedate.min.js"></script>
+<script src="laydate/laydate.js"></script>
+<style type="text/css">
+p
+{
+	border:1px solid black;
+}
+p.s1+p
+{
+	color:red;
+}
+p.s1~p
+{
+	background-color:orange;
+}
+:target
+{
+	color:red;
+}
+div:target
+{
+	background-color:gray;
+}
+::selection
+{
+	color:yellow;
+}
+body{counter-reset:chapter;}
+p:before{content:"第"counter(chapter)"章";}
+p{counter-increment:chapter;}
+div[id="d1"]{transition:background,width 1s,1s linear 0s,0s;}
+div[id="d1"]:hover{background:orange;width:200px;}
+div[id="d1"]{width:10px;height:100px;border:1px solid black;}
+#img{border:1px solid red;width:100px;height:100px;}
+#img img{width:100%;height:100%;}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+    //绑定回车事件
+    document.onkeydown=function(e){if(e.keyCode==13)alert(233);}
+    //this
+    var john={name:"John"};
+    function func(){
+		//console.info('func',this.name);
+		function calcu(){
+			//console.info('calcu',this);
+		}
+		return calcu();
+	};
+	john.sayHi=func;john.sayHi();
+    function funa(){
+		//console.info('funa',this.name);
+		function calcu(){
+			//console.info('calcu',this);
+		}
+		return calcu.call(this);
+	};
+	john.sayHa=funa;john.sayHa();
+    function funs(){
+		//console.info(this);
+	};
+	funs();
+    //"-&quot; '-&#39;
+    //$('body').get(0).innerHTML='<h1 onclick="console.info(&#39;233&#39;);">Click me!</h5>';
+	//三元运算符
+	//console.info('三元运算符:',1===1&&true||false);
+    //自定义函数
+	var ns=' a d ';
+	String.prototype.xudong=function(){return this.replace(/^s+|s+$/g,"#");};
+	//console.info("自定义函数:",ns.xudong());
+    //查看对像所有属性
+	for(var i in event){
+        //console.log(i,event[i]);
+	}
+    //自定义函数-数组求和
+    Array.prototype.sum=function(){var result=0;for(var i=0;i<this.length;i++){result+=this[i];}return result;}
+    //console.info('sum1:',[1,3,2].sum());
+    Array.prototype.sum2=function(){
+        return this.reduce(function(partial,value){return partial+value;});
+    }
+    //console.info('sum2:',[1,3,2].sum2());
+}
+function getPointer(event){
+	//console.log(event.screenX,event.screenY);
+}
+function func(e){
+	var s=e.srcElement || e.target;
+	//console.info(s,s.nodeName);
+}
+$(function(){
+/**keydown_keypress*/
+$("#keydown_keypress").keydown(function(event){
+    $("#keydown_keypress").css("background-color","red");
+	console.info("keydown",event.which);
+});  
+$("#keydown_keypress").keypress(function(event){
+    $("#keydown_keypress").css("background-color","red");
+	console.info("keypress",event.which);
+});  
+$("#keydown_keypress").keyup(function(event){
+	$("#keydown_keypress").css("background-color","blue");
+	console.info("keyup",event.which);
+});
+/**TODO Flume*/
+/*
+var sstr=JSON.stringify('[{"name":"sola2","age":"26"}]');
+//console.info(sstr);
+$.ajax({
+	url:'http://192.168.10.11:85',
+	type:'POST',
+	//data:'[{"headers":{"a":"a1","b":"b1"},"body":'+sstr+'}]'
+	data:'[{"headers":{"a":"b"},"body":'+sstr+'}]'
+});
+//XMLHttpRequest cannot load http://192.168.10.10:85/. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'null' is therefore not allowed access.
+*/
+
+/*
+//var _url="http://192.168.177.22/ttsis/";
+			var _url="http://localhost:8080/ttsis/";
+			$.ajax({
+				type : "POST",
+				url : _url+"inter/student",
+				data : {"publicKey":"RE1gWqdgXL","time":"1470000000000","siphertext":"rEJv71qGak+xWzvlpvH2Tw=="},
+				dataType : "jsonp",
+				success : function(result) {
+					console.info('success',result);
+				},
+				error : function(result){
+					console.info('error',result);
+				}
+			});
+*/
+
+//laydate
+laydate({
+	elem:'#startT',
+	format:'YYYY-MM-DD hh:mm:ss',
+	istime:true,
+	istoday:false
+})
+//jedate
+jeDate.skin("gray");
+jeDate({
+    dateCell:"#endT",
+    format:"YYYY-MM-DD hh:mm:ss",
+    minDate: jeDate.now(0), //设定最小日期为当前日期
+	maxDate: '2017-01-01 00:00:00', //最大日期
+    isTime:true, 
+    choosefun:function(val) {
+    	return startT=val;
+    },
+});
+//img
+jQuery.fn.adv = function(imgs,timer){
+var index = 0;
+var selector = this.selector;
+var img = new Image();
+img.src = imgs[index];
+img.onload = function(){
+$(selector).append(img);
+}
+setInterval(function(){
+$(selector).html("");         
+index ++;         
+if(index >= imgs.length){
+index = 0;         
+}         
+img.src = imgs[index];         
+img.onload = function(){             
+$(selector).append(img);         
+}     
+},timer);
+}
+var imgs = ["img/1.png","img/2.png","img/3.png","img/4.png"];
+$("#img").adv(imgs,1000);
+//html type
+$("input").keyup(function(){
+	$(this).next("span").text($(this).val());
+});
+$("input[class='i_c']").change(function(){
+	$(this).next("span").text($(this).val());
+});
+//canvas 画矩形
+var ca=document.getElementById("canvas_1").getContext('2d');
+ca.strokeRect(10,10,80,80);
+ca.fillRect(20,20,60,60);
+ca.clearRect(30,30,40,40);
+//canvas 小球
+var canvas=document.getElementById("canvas_2");
+var context2D=canvas.getContext('2d');
+//小球从(0,0)开始移动，横向步长为2，纵向步长为3
+var x=0,y=0,dx=2,dy=3;
+setInterval(draw,10);
+function draw(){
+	context2D.fillStyle="red";
+	context2D.clearRect(0,0,canvas.width,canvas.height);
+	//判断边界
+	if(x+dx>canvas.width || x+dx<0)dx*=-1;
+	if(y+dy>canvas.height || y+dy<0)dy*=-1;
+	x+=dx;y+=dy;drawArc(x,y);
+}
+function drawArc(x,y){
+	//自定义画圆方法
+	context2D.fillStyle="red";
+	context2D.beginPath();
+	context2D.arc(x,y,5,0,Math.PI*2,false);
+	context2D.fill();
+	context2D.closePath();
+}
+//if(typeof(Worker)!=="undefined"){console.info('yes');}else{console.info('no');}
+if(localStorage.pageCount){localStorage.pageCount=Number(localStorage.pageCount)+1;}else{localStorage.pageCount=1;}//console.info(localStorage.pageCount);
+/*
+Object.prototype.get_same_class_html=function(){
+	var _names="";
+	for(var i=0;i<this.size();i++){
+		_names+=$(this.get(i)).html()+",";
+		if(i==this.size()-1)
+			_names=_names.substring(0,_names.length-1);
+	}
+	return _names;
+}
+*/
+//console.log($(".teacherName").get_same_class_html());
+});
+</script>
+<body align=center style="border:1px solid black;">
+	<span class="teacherName">我是老师1</span>
+	<span class="teacherName">我是老师2</span>
+	<span class="courseStage">我是阶段1</span>
+	<span class="courseStage">我是阶段2</span>
+	<p>1</p>
+	<p class="s1">2</p>
+	<p>3</p>
+	<p>4</p>
+	<input id="d1" type="button" value="我是按钮" />
+	<div id="d1" onmousemove="getPointer(event);">5</div>
+	<p id='msg'>来自<a>新华社</a>的消息</p>
+	<div style="border:1px solid orange;height:50px;width:100px;" onclick="func(event)">
+		<button style="background-color:red;height:20px;width:50px;">按钮1</button>
+		<button style="background-color:red;height:20px;width:50px;">按钮2</button>
+	</div>
+	<input type="text" id="startT" size=10 placeholder="begin" />To
+	<input type="text" id="endT" size=10 placeholder="end" />
+	<div id="img"></div><br/>
+	<input id="i_s" type="search" placeholder="233" /><span></span>
+	<input id="i_n" type="number" placeholder="233" autofocus /><span></span><br/>
+	<input class="i_c" type="range" min="0" max="10" value="6.18" /><span></span><br/>
+	<input class="i_c" type="color" /><span></span><br/>
+	<input class="i_c" type="date" /><span></span><br/><br/>
+	<form> 
+		<input type="text" id="uname" required pattern="[0-9]" />
+		<span id="unameShow">英文、数字及下划线,6-12位</span>
+		<input type="submit" value="提交" />
+	</form><br/>
+	<canvas id="canvas_1" width="100" height="100" style="border:1px solid orange;"></canvas><br/>
+	<canvas id="canvas_2" width="100" height="100" style="border:1px solid orange;"></canvas><br/>
+	<svg width="100%" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+	<svg width="50%" height="50%">
+		<rect x="100" y="100" width="100" height="100" fill="rgb(0,0,255)" stroke="black" stroke-width="4" />
+		<circle cx="100" cy="50" r="40" fill="red" stroke="black" stroke-width="2" />
+		<ellipse cx="300" cy="150" rx="80" ry="40" fill="rgb(200,100,50)" stroke="rgb(0,0,100)" stroke-width="2" />
+		<line x1="0" y1="200" x2="50" y2="100" stroke="rgb(99,99,99)" stroke-width="2" />
+		<polyline points="0,0 0,20 20,20 20,40 40,40" fill="white" stroke="red" stroke-width="2" />
+		<defs><filter id="Gaussian_Blur"><feGaussianBlur in="SourceGraphic" stdDeviation="3"></filter></defs>
+	</svg><br/>
+	<input id="keydown_keypress" type="text" /><br/>
+</body>
+</html>
